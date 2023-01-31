@@ -267,7 +267,7 @@ body {
   }
   
   .topbar .contact-info i a:hover {
-    color: #0b1726f5;
+    color: #499bff;
   }
   
   .topbar .social-links a {
@@ -278,7 +278,7 @@ body {
   }
   
   .topbar .social-links a:hover {
-    color: #0b1726f5;
+    color: #499bff;
   }
 
 
@@ -1038,12 +1038,12 @@ section {
     background: #fff;
   }
   
-  .contact .info i {
+  .contact .info a {
     font-size: 20px;
     color: #073e85;
     float: left;
-    width: 44px;
-    height: 44px;
+    width: 50px;
+    height: 50px;
     background: #f0f0ff;
     display: flex;
     justify-content: center;
@@ -1072,9 +1072,9 @@ section {
     margin-top: 40px;
   }
   
-  .contact .info .email:hover i,
-  .contact .info .address:hover i,
-  .contact .info .phone:hover i {
+  .contact .info .email:hover a,
+  .contact .info .address:hover a,
+  .contact .info .phone:hover a {
     background: #073e85;
     color: #fff;
   }
