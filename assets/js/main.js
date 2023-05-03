@@ -1,6 +1,6 @@
 /**
-* Template Name: Resi - v4.10.0
-* Template URL: https://bootstrapmade.com/resi-free-bootstrap-html-template/
+* Template Name: Bootslander - v4.10.0
+* Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
@@ -68,7 +68,7 @@
     let offset = header.offsetHeight
 
     if (!header.classList.contains('header-scrolled')) {
-      offset -= 16
+      offset -= 20
     }
 
     let elementPos = select(el).offsetTop
@@ -159,55 +159,57 @@
   });
 
   /**
-   * Porfolio isotope and filter
+   * Preloader
    */
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
-      });
+  let preloader = select('#preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      preloader.remove()
+    });
+  }
 
-      let portfolioFilters = select('#portfolio-flters li', true);
-
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-
-      }, true);
-    }
-
+  /**
+   * Initiate glightbox
+   */
+  const glightbox = GLightbox({
+    selector: '.glightbox'
   });
 
   /**
-   * Initiate portfolio lightbox 
+   * Initiate gallery lightbox 
    */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
+  const galleryLightbox = GLightbox({
+    selector: '.gallery-lightbox'
   });
 
   /**
-   * Portfolio details slider
+   * Testimonials slider
    */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
+  new Swiper('.testimonials-slider', {
+    speed: 600,
     loop: true,
     autoplay: {
       delay: 5000,
       disableOnInteraction: false
     },
+    slidesPerView: 'auto',
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true
     }
+  });
+
+  /**
+   * Animation on scroll
+   */
+  window.addEventListener('load', () => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    })
   });
 
   /**
